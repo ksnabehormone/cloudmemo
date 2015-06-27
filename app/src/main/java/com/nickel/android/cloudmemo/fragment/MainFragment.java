@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nickel.android.cloudmemo.R;
+import com.nickel.android.cloudmemo.adapter.MemoAdapter;
+import com.nickel.android.cloudmemo.entity.Memo;
 import com.nickel.android.cloudmemo.network.memo.MemoReqest;
-import com.nickel.android.cloudmemo.network.memo.MemoResponse;
+import com.nickel.android.cloudmemo.view.OverScrollListView;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -23,6 +25,8 @@ import retrofit.client.Response;
  */
 public class MainFragment extends Fragment {
 
+	private OverScrollListView mListView;
+
 	public MainFragment() {
 	}
 
@@ -30,16 +34,19 @@ public class MainFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+		mListView = (OverScrollListView) rootView.findViewById(R.id.list_memos);
+
 		Map<String, String> params = new LinkedHashMap<String, String>();
 		MemoReqest.getService(getActivity()).getMemos(params, callback);
+
 		return rootView;
 	}
 
-	private final Callback<List<MemoResponse>> callback = new Callback<List<MemoResponse>>() {
+	private final Callback<List<Memo>> callback = new Callback<List<Memo>>() {
 		@Override
-		public void success(List<MemoResponse> memoResponses, Response response) {
-			for (MemoResponse memo : memoResponses) {
-			}
+		public void success(List<Memo> memos, Response response) {
+			MemoAdapter adapter = new MemoAdapter(getActivity(), memos);
+			mListView.setAdapter(adapter);
 		}
 
 		@Override

@@ -1,5 +1,7 @@
 package com.nickel.android.cloudmemo.network.memo;
 
+import com.nickel.android.cloudmemo.entity.Memo;
+
 import java.util.List;
 import java.util.Map;
 
@@ -12,5 +14,5 @@ import retrofit.http.QueryMap;
  */
 public interface MemoService {
 	@GET("/memos")
-	void getMemos(@QueryMap Map<String, String> params, Callback<List<MemoResponse>> cb);
+	void getMemos(@QueryMap Map<String, String> params, Callback<List<Memo>> cb);
 }
