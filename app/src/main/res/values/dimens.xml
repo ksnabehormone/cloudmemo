@@ -2,4 +2,31 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- font sizes -->
+    <!-- 見出しなど -->
+    <dimen name="font_l">22sp</dimen>
+    <!-- 通常テキスト -->
+    <dimen name="font_m">18sp</dimen>
+    <!-- アイコンなど、補足 -->
+    <dimen name="font_ms">15sp</dimen>
+    <!-- あまり使わない -->
+    <dimen name="font_s">12sp</dimen>
+
+    <!-- typical spacing between two views -->
+    <!-- -->
+    <dimen name="spacing_xl">40dp</dimen>
+    <!-- -->
+    <dimen name="spacing_l">24dp</dimen>
+    <!-- レイアウト間の隙間 -->
+    <dimen name="spacing_m">16dp</dimen>
+    <!-- モジュール間の隙間 -->
+    <dimen name="spacing_s">10dp</dimen>
+    <!-- 文字間などの小さい隙間 -->
+    <dimen name="spacing_ss">4dp</dimen>
+
+    <!-- typical sizes of views -->
+    <dimen name="button_height_l">60dp</dimen>
+    <dimen name="button_height_m">40dp</dimen>
+    <dimen name="button_height_s">32dp</dimen>
 </resources>
